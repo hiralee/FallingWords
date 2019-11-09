@@ -20,6 +20,9 @@
 		FBE70DFF2376CCE000A194B9 /* WordServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE70DFE2376CCE000A194B9 /* WordServiceTest.swift */; };
 		FBE70E012376D13900A194B9 /* WordFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE70E002376D13900A194B9 /* WordFetcher.swift */; };
 		FBE70E032376D16300A194B9 /* WordFetcherTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE70E022376D16300A194B9 /* WordFetcherTest.swift */; };
+		FBE70E072376E51500A194B9 /* QuestionViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE70E062376E51500A194B9 /* QuestionViewControllerTest.swift */; };
+		FBE70E092376E5BB00A194B9 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE70E082376E5BB00A194B9 /* QuestionViewController.swift */; };
+		FBE70E0B2376F5B100A194B9 /* QuestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE70E0A2376F5B100A194B9 /* QuestionViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		FBE70DFE2376CCE000A194B9 /* WordServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordServiceTest.swift; sourceTree = "<group>"; };
 		FBE70E002376D13900A194B9 /* WordFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordFetcher.swift; sourceTree = "<group>"; };
 		FBE70E022376D16300A194B9 /* WordFetcherTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordFetcherTest.swift; sourceTree = "<group>"; };
+		FBE70E062376E51500A194B9 /* QuestionViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewControllerTest.swift; sourceTree = "<group>"; };
+		FBE70E082376E5BB00A194B9 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
+		FBE70E0A2376F5B100A194B9 /* QuestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +99,7 @@
 			children = (
 				FBE70E042376D75A00A194B9 /* Model */,
 				FBE70DEF2376C81300A194B9 /* Network */,
+				FBE70E0C2376F5BF00A194B9 /* Questions */,
 				FBE70DBF2376C46A00A194B9 /* AppDelegate.swift */,
 				FBE70DC62376C46D00A194B9 /* Assets.xcassets */,
 				FBE70DC82376C46D00A194B9 /* LaunchScreen.storyboard */,
@@ -105,9 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				FBE70DD62376C46D00A194B9 /* Info.plist */,
-				FBE70DFC2376CCAD00A194B9 /* WordServiceSpy.swift */,
-				FBE70DFE2376CCE000A194B9 /* WordServiceTest.swift */,
-				FBE70E022376D16300A194B9 /* WordFetcherTest.swift */,
+				FBE70E052376E4EC00A194B9 /* Network */,
+				FBE70E062376E51500A194B9 /* QuestionViewControllerTest.swift */,
 			);
 			path = FallingWordsAppTests;
 			sourceTree = "<group>";
@@ -131,6 +137,25 @@
 				FBE70DF02376C83400A194B9 /* Word.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FBE70E052376E4EC00A194B9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FBE70DFC2376CCAD00A194B9 /* WordServiceSpy.swift */,
+				FBE70DFE2376CCE000A194B9 /* WordServiceTest.swift */,
+				FBE70E022376D16300A194B9 /* WordFetcherTest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FBE70E0C2376F5BF00A194B9 /* Questions */ = {
+			isa = PBXGroup;
+			children = (
+				FBE70E082376E5BB00A194B9 /* QuestionViewController.swift */,
+				FBE70E0A2376F5B100A194B9 /* QuestionViewController.xib */,
+			);
+			path = Questions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +242,7 @@
 			files = (
 				FBE70DF32376C85500A194B9 /* words.json in Resources */,
 				FBE70DCA2376C46D00A194B9 /* LaunchScreen.storyboard in Resources */,
+				FBE70E0B2376F5B100A194B9 /* QuestionViewController.xib in Resources */,
 				FBE70DC72376C46D00A194B9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,6 +267,7 @@
 				FBE70DF92376CB3E00A194B9 /* WordService.swift in Sources */,
 				FBE70DFB2376CBCA00A194B9 /* WordServiceMapper.swift in Sources */,
 				FBE70E012376D13900A194B9 /* WordFetcher.swift in Sources */,
+				FBE70E092376E5BB00A194B9 /* QuestionViewController.swift in Sources */,
 				FBE70DF52376C92800A194B9 /* HTTPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +278,7 @@
 			files = (
 				FBE70E032376D16300A194B9 /* WordFetcherTest.swift in Sources */,
 				FBE70DFD2376CCAD00A194B9 /* WordServiceSpy.swift in Sources */,
+				FBE70E072376E51500A194B9 /* QuestionViewControllerTest.swift in Sources */,
 				FBE70DFF2376CCE000A194B9 /* WordServiceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

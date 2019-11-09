@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionViewController" customModule="FallingWordsApp" customModuleProvider="target">
+            <connections>
+                <outlet property="correctAnswerButton" destination="hQw-yQ-JZr" id="hQL-SS-1YM"/>
+                <outlet property="questionLabel" destination="dhC-nd-IyA" id="Ulo-XI-v0Y"/>
+                <outlet property="translationLabel" destination="n5Q-J2-PSd" id="Mlo-qU-jKh"/>
+                <outlet property="translationLabelTopConstraint" destination="lLw-fj-TIA" id="mfX-Yh-kDC"/>
+                <outlet property="view" destination="iN0-l3-epB" id="ZVh-ih-Ext"/>
+                <outlet property="wrongAnswerButton" destination="0XP-wP-Q4w" id="Xa5-K9-csg"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhC-nd-IyA">
+                    <rect key="frame" x="176.5" y="736" width="61" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="bWU-fS-y4C"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0XP-wP-Q4w" userLabel="Wrong Answer Button">
+                    <rect key="frame" x="0.0" y="792" width="207" height="70"/>
+                    <color key="backgroundColor" red="1" green="0.048439991480973221" blue="0.053917271504436926" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="juO-yT-qYs"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                    <state key="normal" title="Wrong">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="wrongButtonClicked:" destination="-1" eventType="touchUpInside" id="Goj-Nw-Cru"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hQw-yQ-JZr" userLabel="Correct Answer Button">
+                    <rect key="frame" x="207" y="792" width="207" height="70"/>
+                    <color key="backgroundColor" red="0.08058598650418379" green="0.60391029792746109" blue="0.041218029049328656" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                    <state key="normal" title="Correct">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="correctButtonClicked:" destination="-1" eventType="touchUpInside" id="CD3-bx-zih"/>
+                    </connections>
+                </button>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5Q-J2-PSd" userLabel="Translation Label">
+                    <rect key="frame" x="176.5" y="84" width="61" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="33G-gC-cjy"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="hQw-yQ-JZr" firstAttribute="leading" secondItem="0XP-wP-Q4w" secondAttribute="trailing" id="2EQ-ZZ-fia"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="0XP-wP-Q4w" secondAttribute="bottom" id="45e-gr-98V"/>
+                <constraint firstItem="hQw-yQ-JZr" firstAttribute="height" secondItem="0XP-wP-Q4w" secondAttribute="height" id="Hz7-EQ-nzV"/>
+                <constraint firstItem="n5Q-J2-PSd" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="QTU-Lh-Iz2"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="dhC-nd-IyA" secondAttribute="bottom" constant="96" id="a0j-HP-m07"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="hQw-yQ-JZr" secondAttribute="bottom" id="gJl-v9-f5o"/>
+                <constraint firstItem="dhC-nd-IyA" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="hHW-cE-76W"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="hQw-yQ-JZr" secondAttribute="trailing" id="ilv-E7-PRq"/>
+                <constraint firstItem="n5Q-J2-PSd" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="40" id="lLw-fj-TIA"/>
+                <constraint firstItem="hQw-yQ-JZr" firstAttribute="centerY" secondItem="0XP-wP-Q4w" secondAttribute="centerY" id="t0z-lu-GiX"/>
+                <constraint firstItem="0XP-wP-Q4w" firstAttribute="width" secondItem="hQw-yQ-JZr" secondAttribute="width" id="yy6-Zy-KZX"/>
+                <constraint firstItem="0XP-wP-Q4w" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="zIR-Oh-uEm"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="147.82608695652175" y="35.491071428571423"/>
+        </view>
+    </objects>
+</document>
