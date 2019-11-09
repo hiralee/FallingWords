@@ -10,6 +10,14 @@
 		FBE70DC02376C46A00A194B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE70DBF2376C46A00A194B9 /* AppDelegate.swift */; };
 		FBE70DC72376C46D00A194B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBE70DC62376C46D00A194B9 /* Assets.xcassets */; };
 		FBE70DCA2376C46D00A194B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBE70DC82376C46D00A194B9 /* LaunchScreen.storyboard */; };
+		FBE70DF12376C83400A194B9 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE70DF02376C83400A194B9 /* Word.swift */; };
+		FBE70DF32376C85500A194B9 /* words.json in Resources */ = {isa = PBXBuildFile; fileRef = FBE70DF22376C85500A194B9 /* words.json */; };
+		FBE70DF52376C92800A194B9 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE70DF42376C92800A194B9 /* HTTPClient.swift */; };
+		FBE70DF72376CA3B00A194B9 /* WordHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE70DF62376CA3B00A194B9 /* WordHTTPClient.swift */; };
+		FBE70DF92376CB3E00A194B9 /* WordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE70DF82376CB3E00A194B9 /* WordService.swift */; };
+		FBE70DFB2376CBCA00A194B9 /* WordServiceMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE70DFA2376CBCA00A194B9 /* WordServiceMapper.swift */; };
+		FBE70DFD2376CCAD00A194B9 /* WordServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE70DFC2376CCAD00A194B9 /* WordServiceSpy.swift */; };
+		FBE70DFF2376CCE000A194B9 /* WordServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE70DFE2376CCE000A194B9 /* WordServiceTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +38,14 @@
 		FBE70DCB2376C46D00A194B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBE70DD02376C46D00A194B9 /* FallingWordsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FallingWordsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBE70DD62376C46D00A194B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBE70DF02376C83400A194B9 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		FBE70DF22376C85500A194B9 /* words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = words.json; sourceTree = "<group>"; };
+		FBE70DF42376C92800A194B9 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		FBE70DF62376CA3B00A194B9 /* WordHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordHTTPClient.swift; sourceTree = "<group>"; };
+		FBE70DF82376CB3E00A194B9 /* WordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordService.swift; sourceTree = "<group>"; };
+		FBE70DFA2376CBCA00A194B9 /* WordServiceMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordServiceMapper.swift; sourceTree = "<group>"; };
+		FBE70DFC2376CCAD00A194B9 /* WordServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordServiceSpy.swift; sourceTree = "<group>"; };
+		FBE70DFE2376CCE000A194B9 /* WordServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordServiceTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +87,9 @@
 		FBE70DBE2376C46A00A194B9 /* FallingWordsApp */ = {
 			isa = PBXGroup;
 			children = (
+				FBE70DF22376C85500A194B9 /* words.json */,
+				FBE70DF02376C83400A194B9 /* Word.swift */,
+				FBE70DEF2376C81300A194B9 /* Network */,
 				FBE70DBF2376C46A00A194B9 /* AppDelegate.swift */,
 				FBE70DC62376C46D00A194B9 /* Assets.xcassets */,
 				FBE70DC82376C46D00A194B9 /* LaunchScreen.storyboard */,
@@ -83,8 +102,21 @@
 			isa = PBXGroup;
 			children = (
 				FBE70DD62376C46D00A194B9 /* Info.plist */,
+				FBE70DFC2376CCAD00A194B9 /* WordServiceSpy.swift */,
+				FBE70DFE2376CCE000A194B9 /* WordServiceTest.swift */,
 			);
 			path = FallingWordsAppTests;
+			sourceTree = "<group>";
+		};
+		FBE70DEF2376C81300A194B9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FBE70DF42376C92800A194B9 /* HTTPClient.swift */,
+				FBE70DF62376CA3B00A194B9 /* WordHTTPClient.swift */,
+				FBE70DF82376CB3E00A194B9 /* WordService.swift */,
+				FBE70DFA2376CBCA00A194B9 /* WordServiceMapper.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +172,7 @@
 					};
 					FBE70DCF2376C46D00A194B9 = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
 						TestTargetID = FBE70DBB2376C46A00A194B9;
 					};
 				};
@@ -168,6 +201,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBE70DF32376C85500A194B9 /* words.json in Resources */,
 				FBE70DCA2376C46D00A194B9 /* LaunchScreen.storyboard in Resources */,
 				FBE70DC72376C46D00A194B9 /* Assets.xcassets in Resources */,
 			);
@@ -188,6 +222,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBE70DC02376C46A00A194B9 /* AppDelegate.swift in Sources */,
+				FBE70DF12376C83400A194B9 /* Word.swift in Sources */,
+				FBE70DF72376CA3B00A194B9 /* WordHTTPClient.swift in Sources */,
+				FBE70DF92376CB3E00A194B9 /* WordService.swift in Sources */,
+				FBE70DFB2376CBCA00A194B9 /* WordServiceMapper.swift in Sources */,
+				FBE70DF52376C92800A194B9 /* HTTPClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +234,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBE70DFD2376CCAD00A194B9 /* WordServiceSpy.swift in Sources */,
+				FBE70DFF2376CCE000A194B9 /* WordServiceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -375,6 +416,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FallingWordsAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -384,6 +426,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hiraleemalaviya.FallingWordsAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FallingWordsApp.app/FallingWordsApp";
@@ -395,6 +438,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FallingWordsAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
