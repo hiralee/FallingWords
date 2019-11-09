@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		FBE70DA32376C3E500A194B9 /* GameEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE70D992376C3E400A194B9 /* GameEngine.framework */; };
+		FBE70DE32376C5E200A194B9 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE70DDF2376C5E200A194B9 /* Result.swift */; };
+		FBE70DE42376C5E200A194B9 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE70DE02376C5E200A194B9 /* Game.swift */; };
+		FBE70DE52376C5E200A194B9 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE70DE12376C5E200A194B9 /* Router.swift */; };
+		FBE70DE62376C5E200A194B9 /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE70DE22376C5E200A194B9 /* Flow.swift */; };
+		FBE70DEB2376C5F300A194B9 /* RouterSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE70DE72376C5F300A194B9 /* RouterSpy.swift */; };
+		FBE70DEC2376C5F300A194B9 /* FlowTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE70DE82376C5F300A194B9 /* FlowTest.swift */; };
+		FBE70DED2376C5F300A194B9 /* GameTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE70DE92376C5F300A194B9 /* GameTest.swift */; };
+		FBE70DEE2376C5F300A194B9 /* GameEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE70DEA2376C5F300A194B9 /* GameEngineTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +33,14 @@
 		FBE70D9D2376C3E500A194B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBE70DA22376C3E500A194B9 /* GameEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBE70DA92376C3E500A194B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FBE70DDF2376C5E200A194B9 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		FBE70DE02376C5E200A194B9 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		FBE70DE12376C5E200A194B9 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		FBE70DE22376C5E200A194B9 /* Flow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
+		FBE70DE72376C5F300A194B9 /* RouterSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterSpy.swift; sourceTree = "<group>"; };
+		FBE70DE82376C5F300A194B9 /* FlowTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowTest.swift; sourceTree = "<group>"; };
+		FBE70DE92376C5F300A194B9 /* GameTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTest.swift; sourceTree = "<group>"; };
+		FBE70DEA2376C5F300A194B9 /* GameEngineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameEngineTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +83,10 @@
 		FBE70D9B2376C3E400A194B9 /* GameEngine */ = {
 			isa = PBXGroup;
 			children = (
+				FBE70DE22376C5E200A194B9 /* Flow.swift */,
+				FBE70DE02376C5E200A194B9 /* Game.swift */,
+				FBE70DDF2376C5E200A194B9 /* Result.swift */,
+				FBE70DE12376C5E200A194B9 /* Router.swift */,
 				FBE70D9D2376C3E500A194B9 /* Info.plist */,
 			);
 			path = GameEngine;
@@ -75,6 +95,10 @@
 		FBE70DA62376C3E500A194B9 /* GameEngineTests */ = {
 			isa = PBXGroup;
 			children = (
+				FBE70DE82376C5F300A194B9 /* FlowTest.swift */,
+				FBE70DEA2376C5F300A194B9 /* GameEngineTests.swift */,
+				FBE70DE92376C5F300A194B9 /* GameTest.swift */,
+				FBE70DE72376C5F300A194B9 /* RouterSpy.swift */,
 				FBE70DA92376C3E500A194B9 /* Info.plist */,
 			);
 			path = GameEngineTests;
@@ -141,9 +165,11 @@
 				TargetAttributes = {
 					FBE70D982376C3E400A194B9 = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
 					};
 					FBE70DA12376C3E500A194B9 = {
 						CreatedOnToolsVersion = 10.3;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
@@ -187,6 +213,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBE70DE32376C5E200A194B9 /* Result.swift in Sources */,
+				FBE70DE62376C5E200A194B9 /* Flow.swift in Sources */,
+				FBE70DE52376C5E200A194B9 /* Router.swift in Sources */,
+				FBE70DE42376C5E200A194B9 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +224,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBE70DEB2376C5F300A194B9 /* RouterSpy.swift in Sources */,
+				FBE70DEC2376C5F300A194B9 /* FlowTest.swift in Sources */,
+				FBE70DED2376C5F300A194B9 /* GameTest.swift in Sources */,
+				FBE70DEE2376C5F300A194B9 /* GameEngineTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +366,7 @@
 		FBE70DAE2376C3E500A194B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -350,6 +385,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hiraleemalaviya.GameEngine;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -357,6 +393,7 @@
 		FBE70DAF2376C3E500A194B9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -382,6 +419,8 @@
 		FBE70DB12376C3E500A194B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = GameEngineTests/Info.plist;
@@ -392,6 +431,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hiraleemalaviya.GameEngineTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -399,6 +439,8 @@
 		FBE70DB22376C3E500A194B9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = GameEngineTests/Info.plist;

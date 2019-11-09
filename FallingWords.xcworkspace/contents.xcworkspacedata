@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:FallingWordsApp/FallingWordsApp.xcodeproj">
+      location = "group:GameEngine/GameEngine.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:GameEngine/GameEngine.xcodeproj">
+      location = "group:FallingWordsApp/FallingWordsApp.xcodeproj">
    </FileRef>
 </Workspace>
