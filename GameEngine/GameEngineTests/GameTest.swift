@@ -18,24 +18,24 @@ class GameTest: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        game = startGame(questions: ["Q1", "Q2"], router: router, correctAnswers: ["Q1": "A1", "Q2": "A2"])
+        game = startGame(questions: ["Q1": "A2", "Q2": "A2"], router: router, correctAnswers: ["Q1": "A1", "Q2": "A2"])
     }
     
     func test_startGame_answerZeroOutOfTwoCorrectly_scoresZero() {
-        router.answerCallback(["wrong"])
-        router.answerCallback(["wrong"])
+        router.answerCallback(["Q1": true])
+        router.answerCallback(["Q2": false])
         
         XCTAssertEqual(router.routedResult!.score, 0)
     }
     
     func test_startGame_answerOneOutOfTwoCorrectly_scoresOne() {
-        router.answerCallback(["A1", "wrong"])
+        router.answerCallback(["Q1": true, "Q2": true])
         
         XCTAssertEqual(router.routedResult!.score, 1)
     }
     
     func test_startGame_answerTwoOutOfTwoCorrectly_scoresTwo() {
-        router.answerCallback(["A1", "A2"])
+        router.answerCallback(["Q1": false, "Q2": true])
         
         XCTAssertEqual(router.routedResult!.score, 2)
     }

@@ -5,11 +5,11 @@ class Flow<R: Router> {
     typealias Answer = R.Answer
     
     private let router: R
-    private let questions: [Question]
-    private var answers: [Question: Answer] = [:]
-    private var scoring: ([Question: Answer]) -> Int
+    private let questions: [Question: Answer]
+    private var answers: [Question: Bool] = [:]
+    private var scoring: ([Question: Bool]) -> Int
     
-    init(questions: [Question], router: R, scoring: @escaping ([Question: Answer]) -> Int) {
+    init(questions: [Question: Answer], router: R, scoring: @escaping ([Question: Bool]) -> Int) {
         self.questions = questions
         self.router = router
         self.scoring = scoring
@@ -25,11 +25,9 @@ class Flow<R: Router> {
         }
     }
     
-    private func callback() -> ([Answer]) -> Void {
+    private func callback() -> ([Question: Bool]) -> Void {
         return { [unowned self] answers in
-            for (question, answer) in zip(self.questions, answers) {
-                self.answers[question] = answer
-            }
+            self.answers = answers
             self.router.routeTo(result: self.result())
         }
     }
