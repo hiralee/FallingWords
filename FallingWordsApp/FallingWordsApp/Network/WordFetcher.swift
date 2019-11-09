@@ -9,24 +9,21 @@
 import Foundation
 
 protocol WordFetchable {
-    func fetchWordsLocally() -> [Word]?
+    func fetchWordsLocally(completion: @escaping ([Word]) -> Void)
     func fetchWordsRemotely(completion: @escaping ([Word]) -> Void)
 }
 
 class WordFetcher: WordFetchable {
-    func fetchWordsLocally() -> [Word]? {
-        var words: [Word]?
-        
+    func fetchWordsLocally(completion: @escaping ([Word]) -> Void) {
         if let path = Bundle.main.path(forResource: "words", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-                words = try JSONDecoder().decode([Word].self, from: data)
+                let words = try JSONDecoder().decode([Word].self, from: data)
+                completion(words)
             } catch {
                 print("Unable to fetch words locally")
             }
         }
-
-        return words
     }
     
     func fetchWordsRemotely(completion: @escaping ([Word]) -> Void) {

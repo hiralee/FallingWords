@@ -19,10 +19,10 @@ class WordFetcherTest: XCTestCase {
     func test_wordFetcher_returnsWordsLocally() {
         let sut = makeSUT()
         
-        let words: [Word] = sut.fetchWordsLocally()!
-        
-        XCTAssertNotNil(words)
-        XCTAssertEqual(words.count, 1)
+        sut.fetchWordsLocally { (words) in
+            XCTAssertNotNil(words)
+            XCTAssertEqual(words.count, 1)
+        }
     }
     
     func test_wordFetcher_returnsWordsRemotely() {
@@ -42,8 +42,8 @@ class WordFetcherTest: XCTestCase {
     }
     
     class WordFetcherSpy: WordFetchable {
-        func fetchWordsLocally() -> [Word]? {
-            return [Word(word: "word", translation: "translation")]
+        func fetchWordsLocally(completion: @escaping ([Word]) -> Void)  {
+            completion([Word(word: "word", translation: "translation")])
         }
         
         func fetchWordsRemotely(completion: @escaping ([Word]) -> Void) {
