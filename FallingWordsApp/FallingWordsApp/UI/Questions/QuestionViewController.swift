@@ -70,7 +70,7 @@ class QuestionViewController: UIViewController {
     }
     
     @IBAction func correctButtonClicked(_ sender: Any) {
-        setAnswer(answer: false)
+        setAnswer(answer: true)
         handleAnimationCompletion()
     }
     
@@ -98,7 +98,7 @@ class QuestionViewController: UIViewController {
             questionsCount += 1
             showQuestion()
         } else {
-            // show result
+            selection?(selectedOptions)
         }
     }
 }

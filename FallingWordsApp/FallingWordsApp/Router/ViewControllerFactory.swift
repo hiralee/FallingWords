@@ -22,6 +22,8 @@ class ViewControllerFactory: ViewControllerFactoryProtocol {
     }
     
     func resultsViewController(for result: Result) -> UIViewController {
-        return UIViewController()
+        let presenter = ResultPresenter(result: result, questions: questions, correctAnswers: correctAnswers)
+        let controller = ResultViewController(summary: presenter.summary, answers: presenter.presentableAnswers)
+        return controller
     }
 }

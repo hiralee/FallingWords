@@ -29,6 +29,16 @@
 		FBE7102F237759DD00A194B9 /* GameEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FBE7102D237759DD00A194B9 /* GameEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FBE7103123775A7400A194B9 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE7103023775A7400A194B9 /* ViewControllerFactory.swift */; };
 		FBE7103423775F7100A194B9 /* NavigationControllerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE7103323775F7100A194B9 /* NavigationControllerRouter.swift */; };
+		FBE710362378038A00A194B9 /* ResultViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE710352378038A00A194B9 /* ResultViewControllerTest.swift */; };
+		FBE7103B2378052700A194B9 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE7103A2378052700A194B9 /* ResultViewController.swift */; };
+		FBE7103D2378077800A194B9 /* PresentableAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE7103C2378077800A194B9 /* PresentableAnswer.swift */; };
+		FBE71042237807E000A194B9 /* ResultPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE71041237807E000A194B9 /* ResultPresenterTest.swift */; };
+		FBE710442378087300A194B9 /* ResultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE710432378087300A194B9 /* ResultHelper.swift */; };
+		FBE71046237808EA00A194B9 /* ResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE71045237808EA00A194B9 /* ResultPresenter.swift */; };
+		FBE710482378198300A194B9 /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE710472378198300A194B9 /* ResultViewController.xib */; };
+		FBE7104A23781BC000A194B9 /* ResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE7104923781BC000A194B9 /* ResultCell.xib */; };
+		FBE7104E23781CA800A194B9 /* ResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE7104D23781CA800A194B9 /* ResultCell.swift */; };
+		FBE7105123781EF500A194B9 /* TableViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE7105023781EF500A194B9 /* TableViewHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,7 +83,7 @@
 		FBE70DFE2376CCE000A194B9 /* WordServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordServiceTest.swift; sourceTree = "<group>"; };
 		FBE70E002376D13900A194B9 /* WordFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordFetcher.swift; sourceTree = "<group>"; };
 		FBE70E022376D16300A194B9 /* WordFetcherTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordFetcherTest.swift; sourceTree = "<group>"; };
-		FBE70E062376E51500A194B9 /* QuestionViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewControllerTest.swift; sourceTree = "<group>"; };
+		FBE70E062376E51500A194B9 /* QuestionViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QuestionViewControllerTest.swift; path = ../QuestionViewControllerTest.swift; sourceTree = "<group>"; };
 		FBE70E082376E5BB00A194B9 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		FBE70E0A2376F5B100A194B9 /* QuestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionViewController.xib; sourceTree = "<group>"; };
 		FBE70E0F23771C2D00A194B9 /* WordsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsFactory.swift; sourceTree = "<group>"; };
@@ -81,6 +91,16 @@
 		FBE7102D237759DD00A194B9 /* GameEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GameEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBE7103023775A7400A194B9 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		FBE7103323775F7100A194B9 /* NavigationControllerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouter.swift; sourceTree = "<group>"; };
+		FBE710352378038A00A194B9 /* ResultViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ResultViewControllerTest.swift; path = FallingWordsAppTests/ResultViewControllerTest.swift; sourceTree = SOURCE_ROOT; };
+		FBE7103A2378052700A194B9 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		FBE7103C2378077800A194B9 /* PresentableAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentableAnswer.swift; sourceTree = "<group>"; };
+		FBE71041237807E000A194B9 /* ResultPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPresenterTest.swift; sourceTree = "<group>"; };
+		FBE710432378087300A194B9 /* ResultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultHelper.swift; sourceTree = "<group>"; };
+		FBE71045237808EA00A194B9 /* ResultPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultPresenter.swift; sourceTree = "<group>"; };
+		FBE710472378198300A194B9 /* ResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
+		FBE7104923781BC000A194B9 /* ResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ResultCell.xib; path = ../ResultCell.xib; sourceTree = "<group>"; };
+		FBE7104D23781CA800A194B9 /* ResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCell.swift; sourceTree = "<group>"; };
+		FBE7105023781EF500A194B9 /* TableViewHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +148,7 @@
 				FBE7103223775F5400A194B9 /* Router */,
 				FBE70E042376D75A00A194B9 /* Model */,
 				FBE70DEF2376C81300A194B9 /* Network */,
-				FBE70E0C2376F5BF00A194B9 /* Questions */,
+				FBE710392378050900A194B9 /* UI */,
 				FBE70DBF2376C46A00A194B9 /* AppDelegate.swift */,
 				FBE70DC62376C46D00A194B9 /* Assets.xcassets */,
 				FBE70DC82376C46D00A194B9 /* LaunchScreen.storyboard */,
@@ -141,9 +161,10 @@
 			isa = PBXGroup;
 			children = (
 				FBE70DD62376C46D00A194B9 /* Info.plist */,
-				FBE70E052376E4EC00A194B9 /* Network */,
-				FBE70E062376E51500A194B9 /* QuestionViewControllerTest.swift */,
 				FBE70E1123771C4200A194B9 /* WordsFactoryTest.swift */,
+				FBE70E052376E4EC00A194B9 /* Network */,
+				FBE71040237807C200A194B9 /* Presenter */,
+				FBE710372378039F00A194B9 /* UI */,
 			);
 			path = FallingWordsAppTests;
 			sourceTree = "<group>";
@@ -203,6 +224,79 @@
 				FBE7103323775F7100A194B9 /* NavigationControllerRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		FBE710372378039F00A194B9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FBE7104F23781ED900A194B9 /* Helper */,
+				FBE70E062376E51500A194B9 /* QuestionViewControllerTest.swift */,
+				FBE710352378038A00A194B9 /* ResultViewControllerTest.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		FBE71038237804FC00A194B9 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				FBE7103E2378078A00A194B9 /* Presenter */,
+				FBE7103F2378079600A194B9 /* View */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		FBE710392378050900A194B9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				FBE70E0C2376F5BF00A194B9 /* Questions */,
+				FBE71038237804FC00A194B9 /* Result */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		FBE7103E2378078A00A194B9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FBE7103C2378077800A194B9 /* PresentableAnswer.swift */,
+				FBE71045237808EA00A194B9 /* ResultPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FBE7103F2378079600A194B9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FBE7104C23781C6700A194B9 /* Cell */,
+				FBE7103A2378052700A194B9 /* ResultViewController.swift */,
+				FBE710472378198300A194B9 /* ResultViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FBE71040237807C200A194B9 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				FBE710432378087300A194B9 /* ResultHelper.swift */,
+				FBE71041237807E000A194B9 /* ResultPresenterTest.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		FBE7104C23781C6700A194B9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FBE7104D23781CA800A194B9 /* ResultCell.swift */,
+				FBE7104923781BC000A194B9 /* ResultCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FBE7104F23781ED900A194B9 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				FBE7105023781EF500A194B9 /* TableViewHelper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +385,8 @@
 				FBE70DF32376C85500A194B9 /* words.json in Resources */,
 				FBE70DCA2376C46D00A194B9 /* LaunchScreen.storyboard in Resources */,
 				FBE70E0B2376F5B100A194B9 /* QuestionViewController.xib in Resources */,
+				FBE710482378198300A194B9 /* ResultViewController.xib in Resources */,
+				FBE7104A23781BC000A194B9 /* ResultCell.xib in Resources */,
 				FBE70DC72376C46D00A194B9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,12 +410,16 @@
 				FBE70DF12376C83400A194B9 /* Word.swift in Sources */,
 				FBE70DF72376CA3B00A194B9 /* WordHTTPClient.swift in Sources */,
 				FBE70DF92376CB3E00A194B9 /* WordService.swift in Sources */,
+				FBE7103D2378077800A194B9 /* PresentableAnswer.swift in Sources */,
 				FBE70DFB2376CBCA00A194B9 /* WordServiceMapper.swift in Sources */,
 				FBE70E012376D13900A194B9 /* WordFetcher.swift in Sources */,
+				FBE7104E23781CA800A194B9 /* ResultCell.swift in Sources */,
 				FBE70E1023771C2D00A194B9 /* WordsFactory.swift in Sources */,
 				FBE70E092376E5BB00A194B9 /* QuestionViewController.swift in Sources */,
 				FBE70DF52376C92800A194B9 /* HTTPClient.swift in Sources */,
+				FBE71046237808EA00A194B9 /* ResultPresenter.swift in Sources */,
 				FBE7103423775F7100A194B9 /* NavigationControllerRouter.swift in Sources */,
+				FBE7103B2378052700A194B9 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,10 +428,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBE70E032376D16300A194B9 /* WordFetcherTest.swift in Sources */,
+				FBE71042237807E000A194B9 /* ResultPresenterTest.swift in Sources */,
 				FBE70DFD2376CCAD00A194B9 /* WordServiceSpy.swift in Sources */,
 				FBE70E1223771C4200A194B9 /* WordsFactoryTest.swift in Sources */,
+				FBE7105123781EF500A194B9 /* TableViewHelper.swift in Sources */,
+				FBE710442378087300A194B9 /* ResultHelper.swift in Sources */,
 				FBE70E072376E51500A194B9 /* QuestionViewControllerTest.swift in Sources */,
 				FBE70DFF2376CCE000A194B9 /* WordServiceTest.swift in Sources */,
+				FBE710362378038A00A194B9 /* ResultViewControllerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
