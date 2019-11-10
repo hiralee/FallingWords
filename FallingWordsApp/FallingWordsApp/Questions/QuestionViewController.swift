@@ -9,11 +9,14 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var correctAnswerButton: UIButton!
     @IBOutlet weak var translationLabelTopConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     private(set) var questions = [String: String]()
     var selectedOptions: [String: Bool] = [:]
     private var selection: (([String: Bool]) -> Void)? = nil
     
     var questionsCount = 0
+    
+    var animator: UIViewPropertyAnimator!
     
     convenience init(questions: [String: String], selection: @escaping ([String: Bool]) -> Void) {
         self.init()
@@ -32,21 +35,27 @@ class QuestionViewController: UIViewController {
     }
     
     func showQuestion() {
-        questionLabel.text = Array(questions.keys)[questionsCount]
-        translationLabel.text = Array(questions.values)[questionsCount]
-        animateTranslation()
+        DispatchQueue.main.async { [weak self] in
+            guard let strongSelf = self else { return }
+
+            strongSelf.questionLabel.text = Array(strongSelf.questions.keys)[strongSelf.questionsCount]
+            strongSelf.translationLabel.text = Array(strongSelf.questions.values)[strongSelf.questionsCount]
+            strongSelf.animateTranslation()
+        }
     }
     
     func animateTranslation() {
-        UIView.animate(withDuration: 4.0, delay: 0, options: .curveLinear, animations: { [weak self] in
-            
-            self?.translationLabel.isHidden = false
-            self?.isCorrectAndWrongButtonEnabled(true)
-            self?.translationLabelTopConstraint.constant = UIScreen.main.bounds.height - 150
-        }) { [weak self] (animationCompleted) in
-            self?.translationLabel.isHidden = true
-            self?.isCorrectAndWrongButtonEnabled(false)
-            self?.incrementQuestionCount()
+        self.translationLabel.isHidden = false
+        self.isCorrectAndWrongButtonEnabled(true)
+        
+        animator = UIViewPropertyAnimator(duration: 5.0, curve: .linear) {
+            self.translationLabelTopConstraint.constant = UIScreen.main.bounds.height - self.bottomConstraint.constant*3
+            self.view.layoutIfNeeded()
+        }
+        
+        animator.startAnimation()
+        animator.addCompletion { (position) in
+            self.handleAnimationCompletion()
         }
     }
     
@@ -57,10 +66,12 @@ class QuestionViewController: UIViewController {
     
     @IBAction func wrongButtonClicked(_ sender: Any) {
         setAnswer(answer: false)
+        handleAnimationCompletion()
     }
     
     @IBAction func correctButtonClicked(_ sender: Any) {
         setAnswer(answer: false)
+        handleAnimationCompletion()
     }
     
     private func setAnswer(answer: Bool) {
@@ -71,9 +82,21 @@ class QuestionViewController: UIViewController {
         selectedOptions[question] = answer
     }
     
+    private func handleAnimationCompletion() {
+        DispatchQueue.main.async { [weak self] in
+            self?.animator.stopAnimation(true)
+            self?.translationLabel.isHidden = true
+            self?.isCorrectAndWrongButtonEnabled(false)
+            self?.translationLabelTopConstraint.constant = 40
+            self?.view.layoutIfNeeded()
+            self?.incrementQuestionCount()
+        }
+    }
+    
     func incrementQuestionCount() {
-        if questionsCount < questions.count {
+        if questionsCount < questions.count - 1 {
             questionsCount += 1
+            showQuestion()
         } else {
             // show result
         }

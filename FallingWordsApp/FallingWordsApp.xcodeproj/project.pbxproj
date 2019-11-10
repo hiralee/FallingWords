@@ -25,6 +25,10 @@
 		FBE70E0B2376F5B100A194B9 /* QuestionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBE70E0A2376F5B100A194B9 /* QuestionViewController.xib */; };
 		FBE70E1023771C2D00A194B9 /* WordsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE70E0F23771C2D00A194B9 /* WordsFactory.swift */; };
 		FBE70E1223771C4200A194B9 /* WordsFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE70E1123771C4200A194B9 /* WordsFactoryTest.swift */; };
+		FBE7102E237759DD00A194B9 /* GameEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE7102D237759DD00A194B9 /* GameEngine.framework */; };
+		FBE7102F237759DD00A194B9 /* GameEngine.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FBE7102D237759DD00A194B9 /* GameEngine.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FBE7103123775A7400A194B9 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE7103023775A7400A194B9 /* ViewControllerFactory.swift */; };
+		FBE7103423775F7100A194B9 /* NavigationControllerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE7103323775F7100A194B9 /* NavigationControllerRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,20 @@
 			remoteInfo = FallingWordsApp;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FBE70E932377445700A194B9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FBE7102F237759DD00A194B9 /* GameEngine.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		FBE70DBC2376C46A00A194B9 /* FallingWordsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallingWordsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +78,9 @@
 		FBE70E0A2376F5B100A194B9 /* QuestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionViewController.xib; sourceTree = "<group>"; };
 		FBE70E0F23771C2D00A194B9 /* WordsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordsFactory.swift; sourceTree = "<group>"; };
 		FBE70E1123771C4200A194B9 /* WordsFactoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsFactoryTest.swift; sourceTree = "<group>"; };
+		FBE7102D237759DD00A194B9 /* GameEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GameEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBE7103023775A7400A194B9 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		FBE7103323775F7100A194B9 /* NavigationControllerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBE7102E237759DD00A194B9 /* GameEngine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,9 +105,11 @@
 		FBE70DB32376C46A00A194B9 = {
 			isa = PBXGroup;
 			children = (
+				FBE7102D237759DD00A194B9 /* GameEngine.framework */,
 				FBE70DBE2376C46A00A194B9 /* FallingWordsApp */,
 				FBE70DD32376C46D00A194B9 /* FallingWordsAppTests */,
 				FBE70DBD2376C46A00A194B9 /* Products */,
+				FBE70E8D2377444F00A194B9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +125,7 @@
 		FBE70DBE2376C46A00A194B9 /* FallingWordsApp */ = {
 			isa = PBXGroup;
 			children = (
+				FBE7103223775F5400A194B9 /* Router */,
 				FBE70E042376D75A00A194B9 /* Model */,
 				FBE70DEF2376C81300A194B9 /* Network */,
 				FBE70E0C2376F5BF00A194B9 /* Questions */,
@@ -164,6 +189,22 @@
 			path = Questions;
 			sourceTree = "<group>";
 		};
+		FBE70E8D2377444F00A194B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FBE7103223775F5400A194B9 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				FBE7103023775A7400A194B9 /* ViewControllerFactory.swift */,
+				FBE7103323775F7100A194B9 /* NavigationControllerRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -174,6 +215,7 @@
 				FBE70DB82376C46A00A194B9 /* Sources */,
 				FBE70DB92376C46A00A194B9 /* Frameworks */,
 				FBE70DBA2376C46A00A194B9 /* Resources */,
+				FBE70E932377445700A194B9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -268,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBE70DC02376C46A00A194B9 /* AppDelegate.swift in Sources */,
+				FBE7103123775A7400A194B9 /* ViewControllerFactory.swift in Sources */,
 				FBE70DF12376C83400A194B9 /* Word.swift in Sources */,
 				FBE70DF72376CA3B00A194B9 /* WordHTTPClient.swift in Sources */,
 				FBE70DF92376CB3E00A194B9 /* WordService.swift in Sources */,
@@ -276,6 +319,7 @@
 				FBE70E1023771C2D00A194B9 /* WordsFactory.swift in Sources */,
 				FBE70E092376E5BB00A194B9 /* QuestionViewController.swift in Sources */,
 				FBE70DF52376C92800A194B9 /* HTTPClient.swift in Sources */,
+				FBE7103423775F7100A194B9 /* NavigationControllerRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

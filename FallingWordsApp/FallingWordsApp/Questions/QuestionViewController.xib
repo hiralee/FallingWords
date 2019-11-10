@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionViewController" customModule="FallingWordsApp" customModuleProvider="target">
             <connections>
+                <outlet property="bottomConstraint" destination="a0j-HP-m07" id="CyP-Rq-yhd"/>
                 <outlet property="correctAnswerButton" destination="hQw-yQ-JZr" id="hQL-SS-1YM"/>
                 <outlet property="questionLabel" destination="dhC-nd-IyA" id="Ulo-XI-v0Y"/>
                 <outlet property="translationLabel" destination="n5Q-J2-PSd" id="Mlo-qU-jKh"/>
@@ -25,9 +26,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhC-nd-IyA">
-                    <rect key="frame" x="176.5" y="736" width="61" height="30"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhC-nd-IyA">
+                    <rect key="frame" x="19" y="736" width="376" height="30"/>
                     <constraints>
+                        <constraint firstAttribute="width" constant="376" id="aab-QZ-mkK"/>
                         <constraint firstAttribute="height" constant="30" id="bWU-fS-y4C"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
@@ -59,10 +61,11 @@
                         <action selector="correctButtonClicked:" destination="-1" eventType="touchUpInside" id="CD3-bx-zih"/>
                     </connections>
                 </button>
-                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5Q-J2-PSd" userLabel="Translation Label">
-                    <rect key="frame" x="176.5" y="84" width="61" height="30"/>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5Q-J2-PSd" userLabel="Translation Label">
+                    <rect key="frame" x="19.5" y="84" width="375" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="33G-gC-cjy"/>
+                        <constraint firstAttribute="width" constant="375" id="vSq-1q-vsh"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                     <nil key="textColor"/>

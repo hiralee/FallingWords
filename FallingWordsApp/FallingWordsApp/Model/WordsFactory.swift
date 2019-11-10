@@ -1,4 +1,5 @@
 import Foundation
+import GameEngine
 
 protocol WordsFactoryProtocol {
     func fetchQuestions(count: Int, fetch option: WordFetchingOption) -> (questions: [String: String], correctAnswers: [String: String])
