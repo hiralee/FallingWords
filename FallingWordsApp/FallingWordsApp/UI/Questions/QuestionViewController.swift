@@ -8,8 +8,8 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var wrongAnswerButton: UIButton!
     @IBOutlet weak var correctAnswerButton: UIButton!
     @IBOutlet weak var translationLabelTopConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
     private(set) var questions = [String: String]()
     var selectedOptions: [String: Bool] = [:]
     private var selection: (([String: Bool]) -> Void)? = nil

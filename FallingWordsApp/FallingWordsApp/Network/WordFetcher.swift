@@ -27,20 +27,35 @@ class WordFetcher: WordFetchable {
     }
     
     func fetchWordsRemotely(completion: @escaping ([Word]) -> Void) {
-        let service = WordService(client: WordHTTPClient(session: URLSession(configuration: .default)))
-        service.url = URL(string: WordService.wordBaseURL)
+        guard let url = URL(string: .wordURL) else {
+            completion([])
+            return
+        }
+        
+        let service = Service(client: HTTPClient(session: URLSession(configuration: .default)), url: url)
         
         service.load { [weak self] (result) in
-            guard self != nil else {
-                return
-            }
+            guard let strongSelf = self else { return }
             
             switch result {
-            case let .success(words):
+            case .success(let data):
+                guard let words = strongSelf.decodeWord(data: data) else {
+                    completion([])
+                    return
+                }
                 completion(words)
-            case .failure(_):
+                
+            case .failure(let error):
                 completion([])
             }
         }
+    }
+    
+    private func decodeWord(data: Data) -> [Word]? {
+        guard let words = try? JSONDecoder().decode([Word].self, from: data) else {
+            return nil
+        }
+        
+        return words
     }
 }

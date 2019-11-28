@@ -10,7 +10,7 @@ import Foundation
 import XCTest
 @testable import FallingWordsApp
 
-class WordServiceTest: XCTestCase {
+class ServiceTest: XCTestCase {
     
     func test_init_doesNotRequestDataFromURL() {
         let (_, client) = makeSUT()
@@ -41,7 +41,7 @@ class WordServiceTest: XCTestCase {
         let url = URL(fileURLWithPath: "http://a-given-http-url.com")
         let (sut, client) = makeSUT(url: url)
         
-        expect(sut, toCompleteWith: .failure(WordService.Error.connectivity), when: {
+        expect(sut, toCompleteWith: .failure(ServiceError.connectivity), when: {
             let clientError = NSError(domain: "Test", code: 0, userInfo: nil)
             client.complete(with: clientError)
         })
@@ -52,61 +52,40 @@ class WordServiceTest: XCTestCase {
         let (sut, client) = makeSUT(url: url)
         let samples =  [199, 201, 300, 400, 500]
         
-        samples.enumerated().forEach { index, code in
-            expect(sut, toCompleteWith: .failure(WordService.Error.invalidData), when: {
+        samples.enumerated().forEach { (arg) in
+            let (index, code) = arg
+            expect(sut, toCompleteWith: .failure(ServiceError.invalidData), when: {
                 client.complete(withStatusCode: code, at: index)
             })
         }
     }
-    
-    func test_load_deliversErrorOn200HTTPResponseWithInvalidJSON() {
-        let url = URL(fileURLWithPath: "http://a-given-http-url.com")
-        let (sut, client) = makeSUT(url: url)
-        
-        expect(sut, toCompleteWith: .failure(.invalidData), when: {
-            let invalidJSON = Data("invalid json".utf8)
-            client.complete(withStatusCode: 200, data: invalidJSON)
-        })
-    }
-    
-    func test_load_deliversNoItemsOn200HTTPResponseWithEmptyJSONList() {
-        let url = URL(fileURLWithPath: "http://a-given-http-url.com")
-        let (sut, client) = makeSUT(url: url)
-        
-        expect(sut, toCompleteWith: .failure(.invalidData), when: {
-            let emptyData = Data("{}".utf8)
-            client.complete(withStatusCode: 200, data: emptyData)
-        })
-    }
-    
+
     func test_load_deliversItemsOn200HTTPResponseWithJSONItems() {
         let url = URL(fileURLWithPath: "http://a-given-http-u rl.com")
         let (sut, client) = makeSUT(url: url)
-        let item = makeItem()
+        let data = makeItem()
         
-        expect(sut, toCompleteWith: .success(item.model), when: {
-            let data = try! JSONSerialization.data(withJSONObject: item.json)
+        expect(sut, toCompleteWith: .success(data), when: {
             client.complete(withStatusCode: 200, data: data)
         })
     }
     
     // MARK: Helpers
     
-    func makeSUT(url: URL = URL(fileURLWithPath: "http://a-given-http-url.com")) -> (sut: WordService, client: HTTPClientSpy) {
+    func makeSUT(url: URL = URL(fileURLWithPath: "http://a-given-http-url.com")) -> (sut: Service, client: HTTPClientSpy) {
         let client = HTTPClientSpy()
-        let sut = WordService(client: client)
-        sut.url = url
+        let sut = Service(client: client, url: url)
         return (sut, client)
     }
     
-    private func expect(_ sut: WordService, toCompleteWith expectedResult: WordService.Result, when action: () -> Void) {
+    private func expect(_ sut: Service, toCompleteWith expectedResult: ServiceResult, when action: () -> Void) {
         let exp = expectation(description: "Wait for load completion")
         
         sut.load { receivedResult in
             switch (receivedResult, expectedResult) {
             case let (.success(receivedItems), .success(expectedItems)):
                 XCTAssertEqual(receivedItems.count, expectedItems.count)
-            case let (.failure(receivedError), .failure(expectedError)):
+            case let (.failure(receivedError as ServiceError), .failure(expectedError as ServiceError)):
                 XCTAssertEqual(receivedError, expectedError)
             default:
                 XCTFail("Expected result \(expectedResult) got \(receivedResult) instead")
@@ -119,16 +98,9 @@ class WordServiceTest: XCTestCase {
         wait(for: [exp], timeout: 1.0)
     }
     
-    private func makeItem() -> (model: [Word], json: [Any]) {
-        let model = [Word(word: "word", translation: "translation")]
-        var json: [Any] = []
-        var words = [Any]()
-        words.append(["text_eng": "word",
-                      "text_spa": "translation"
-                         ])
-        json = words
-        
-        return (model, json)
+    private func makeItem() -> Data {
+        let json: Data = "{\"text_eng\": \"word\", \"text_spa\": \"translation\"}".data(using: .utf8)!
+        return json
     }
 }
 

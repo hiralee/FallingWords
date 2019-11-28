@@ -9,7 +9,7 @@
 import Foundation
 @testable import FallingWordsApp
 
-class HTTPClientSpy: HTTPClient {
+class HTTPClientSpy: HTTPClientProtocol {
     var messages = [(url: URL, completion: (HTTPClientResult) -> Void)]()
     
     var requestedURLs: [URL] {
