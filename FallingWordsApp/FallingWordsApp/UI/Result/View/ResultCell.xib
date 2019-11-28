@@ -18,14 +18,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="565" height="77.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVa-E8-4oD" userLabel="CorrectAnswer">
-                        <rect key="frame" x="503" y="28.5" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CY-Ok-ABm" userLabel="Question">
+                        <rect key="frame" x="20" y="28.5" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CY-Ok-ABm" userLabel="Question">
-                        <rect key="frame" x="20" y="28.5" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3p-gD-reB" userLabel="Given Answer">
+                        <rect key="frame" x="261" y="28" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVa-E8-4oD" userLabel="Correct Answer">
+                        <rect key="frame" x="503" y="28.5" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -35,11 +41,14 @@
             <constraints>
                 <constraint firstItem="5CY-Ok-ABm" firstAttribute="leading" secondItem="VkY-J1-9vr" secondAttribute="leading" constant="20" id="Nyf-cw-Vi7"/>
                 <constraint firstAttribute="trailing" secondItem="LVa-E8-4oD" secondAttribute="trailing" constant="20" id="OgP-0y-oVf"/>
+                <constraint firstItem="j3p-gD-reB" firstAttribute="centerX" secondItem="VkY-J1-9vr" secondAttribute="centerX" id="Uf8-Cp-EzS"/>
                 <constraint firstItem="5CY-Ok-ABm" firstAttribute="centerY" secondItem="VkY-J1-9vr" secondAttribute="centerY" id="aFk-bX-Sqx"/>
+                <constraint firstItem="j3p-gD-reB" firstAttribute="centerY" secondItem="VkY-J1-9vr" secondAttribute="centerY" id="eyU-51-Dlo"/>
                 <constraint firstItem="LVa-E8-4oD" firstAttribute="centerY" secondItem="VkY-J1-9vr" secondAttribute="centerY" id="wCJ-wl-LMb"/>
             </constraints>
             <connections>
                 <outlet property="correctAnswerLabel" destination="LVa-E8-4oD" id="uge-la-tlQ"/>
+                <outlet property="givenAnswerLabel" destination="j3p-gD-reB" id="iXt-UU-3zx"/>
                 <outlet property="questionLabel" destination="5CY-Ok-ABm" id="mUq-Ip-t6t"/>
             </connections>
             <point key="canvasLocation" x="183.33333333333334" y="3.3482142857142856"/>

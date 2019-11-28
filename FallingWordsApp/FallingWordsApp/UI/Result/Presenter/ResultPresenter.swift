@@ -24,7 +24,7 @@ struct ResultPresenter {
             let isCorrectTranslation: Bool = (question.value == correctAnswer)
             let isCorrectAnswer: Bool = (isCorrectTranslation == userAnswer) ? true : false
             
-            return PresentableAnswer(question: question.key, answer: correctAnswer, isCorrectAnswer: isCorrectAnswer)
+            return PresentableAnswer(question: question.key, givenAnswer: question.value, answer: correctAnswer, isCorrectAnswer: isCorrectAnswer)
         }
     }
 }

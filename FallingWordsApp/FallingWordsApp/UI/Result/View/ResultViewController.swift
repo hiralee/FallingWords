@@ -38,13 +38,16 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         let result = answers[indexPath.row]
         
         cell?.questionLabel.text = result.question
+        cell?.givenAnswerLabel.text = result.givenAnswer
         cell?.correctAnswerLabel.text = result.answer
         
         if result.isCorrectAnswer {
-            cell?.correctAnswerLabel.textColor = .green
+            cell?.givenAnswerLabel.textColor = .green
         } else {
-            cell?.correctAnswerLabel.textColor = .red
+            cell?.givenAnswerLabel.textColor = .red
         }
+        
+        cell?.correctAnswerLabel.textColor = .green
         
         return cell!
     }
