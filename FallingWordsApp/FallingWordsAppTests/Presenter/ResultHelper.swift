@@ -2,8 +2,8 @@ import Foundation
 @testable import GameEngine
 
 extension Result {
-    static func make(answers: [String: Bool] = [:], score: Int = 0) -> Result {
-        return Result(answers: answers, score: score)
+    static func make(answers: [String: Bool] = [:], score: Int = 0) -> Result<String> {
+        return Result<String>(answers: answers, score: score)
     }
 }
 

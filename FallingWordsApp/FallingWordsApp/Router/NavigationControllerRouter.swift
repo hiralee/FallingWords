@@ -2,7 +2,7 @@ import UIKit
 import GameEngine
 
 class NavigationControllerRouter: Router {
-    
+
     private let navigationController: UINavigationController
     private let factory: ViewControllerFactory
     
@@ -15,7 +15,7 @@ class NavigationControllerRouter: Router {
         show(factory.questionViewController(for: questions, answerCallback: answerCallback))
     }
     
-    func routeTo(result: Result) {
+    func routeTo(result: Result<String>) {
         show(factory.resultsViewController(for: result))
     }
     

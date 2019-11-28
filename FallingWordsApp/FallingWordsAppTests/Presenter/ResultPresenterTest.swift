@@ -28,7 +28,7 @@ class ResultPresenterTest: XCTestCase {
     func test_summary_withTwoQuestionsAndScoreOne_returnsSummary() {
         let answers = ["A1": true, "A2": false]
         let questions = ["Q1": "A1", "Q2": "A2"]
-        let result = Result.make(answers: answers, score: 1)
+        let result = Result<String>.make(answers: answers, score: 1)
         
         let sut = ResultPresenter(result: result, questions: questions, correctAnswers: [:])
         
@@ -39,7 +39,7 @@ class ResultPresenterTest: XCTestCase {
         let answers = ["Q1": false]
         let questions = ["Q1": "A1"]
         let correctAnswers = ["Q1": "A1"]
-        let result = Result.make(answers: answers)
+        let result = Result<String>.make(answers: answers)
         
         let sut = ResultPresenter(result: result, questions: questions, correctAnswers: correctAnswers)
         
@@ -53,7 +53,7 @@ class ResultPresenterTest: XCTestCase {
         let answers = ["Q1": true, "Q2": false]
         let correctAnswers = ["Q1": "A1", "Q2": "A2"]
         let orderedQuestions = ["Q1": "A1", "Q2": "A2"]
-        let result = Result.make(answers: answers)
+        let result = Result<String>.make(answers: answers)
         
         let sut = ResultPresenter(result: result, questions: orderedQuestions, correctAnswers: correctAnswers)
         

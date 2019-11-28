@@ -2,7 +2,7 @@ import Foundation
 import GameEngine
 
 struct ResultPresenter {
-    let result: Result
+    let result: Result<String>
     let questions: [String: String]
     let correctAnswers: [String: String]
     

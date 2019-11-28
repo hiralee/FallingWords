@@ -13,7 +13,7 @@ import GameEngine
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var game: Game<NavigationControllerRouter>?
+    var game: Game<String, String, NavigationControllerRouter>?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

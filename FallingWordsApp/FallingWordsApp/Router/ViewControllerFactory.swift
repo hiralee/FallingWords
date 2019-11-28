@@ -3,7 +3,7 @@ import GameEngine
 
 protocol ViewControllerFactoryProtocol {
     func questionViewController(for questions: [String: String], answerCallback: @escaping ([String: Bool]) -> Void) -> UIViewController
-    func resultsViewController(for result: Result) -> UIViewController
+    func resultsViewController(for result: Result<String>) -> UIViewController
 }
 
 class ViewControllerFactory: ViewControllerFactoryProtocol {
@@ -21,7 +21,7 @@ class ViewControllerFactory: ViewControllerFactoryProtocol {
         return controller
     }
     
-    func resultsViewController(for result: Result) -> UIViewController {
+    func resultsViewController(for result: Result<String>) -> UIViewController {
         let presenter = ResultPresenter(result: result, questions: questions, correctAnswers: correctAnswers)
         let controller = ResultViewController(summary: presenter.summary, answers: presenter.presentableAnswers)
         return controller
