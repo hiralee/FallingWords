@@ -1,7 +1,10 @@
 import Foundation
 
 public protocol Router {
-    func routeTo(questions: [String: String], answerCallback: @escaping ([String: Bool]) -> Void)
-    func routeTo(result: Result)
+    associatedtype Question: Hashable
+    associatedtype Answer: Equatable
+    
+    func routeTo(questions: [Question: Answer], answerCallback: @escaping ([Question: Bool]) -> Void)
+    func routeTo(result: Result<Question>)
 }
 

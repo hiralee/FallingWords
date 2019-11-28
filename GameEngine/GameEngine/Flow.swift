@@ -1,12 +1,15 @@
 import Foundation
 
 class Flow<R: Router> {
-    private let router: R
-    private let questions: [String: String]
-    private var answers: [String: Bool] = [:]
-    private var scoring: ([String: Bool]) -> Int
+    typealias Question = R.Question
+    typealias Answer = R.Answer
     
-    init(questions: [String: String], router: R, scoring: @escaping ([String: Bool]) -> Int) {
+    private let router: R
+    private let questions: [Question: Answer]
+    private var answers: [Question: Bool] = [:]
+    private var scoring: ([Question: Bool]) -> Int
+    
+    init(questions: [Question: Answer], router: R, scoring: @escaping ([Question: Bool]) -> Int) {
         self.questions = questions
         self.router = router
         self.scoring = scoring
@@ -22,14 +25,14 @@ class Flow<R: Router> {
         }
     }
     
-    private func callback() -> ([String: Bool]) -> Void {
+    private func callback() -> ([Question: Bool]) -> Void {
         return { [unowned self] answers in
             self.answers = answers
             self.router.routeTo(result: self.result())
         }
     }
     
-    private func result() -> Result {
+    private func result() -> Result<Question> {
         return Result(answers: answers, score: scoring(answers))
     }
 }

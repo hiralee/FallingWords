@@ -4,7 +4,7 @@ import GameEngine
 class RouterSpy: Router {
     
     var routedQuestions: [String : String] = [:]
-    var routedResult: Result? = nil
+    var routedResult: Result<String>? = nil
     
     var answerCallback: ([String: Bool]) -> Void = { _ in }
     
@@ -13,7 +13,7 @@ class RouterSpy: Router {
         self.answerCallback = answerCallback
     }
     
-    func routeTo(result: Result) {
+    func routeTo(result: Result<String>) {
         routedResult = result
     }
 }

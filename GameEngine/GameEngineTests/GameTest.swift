@@ -1,11 +1,3 @@
-//
-//  GameTest.swift
-//  GameEngineTests
-//
-//  Created by hiralee malaviya on 08.11.19.
-//  Copyright © 2019 hiralee malaviya. All rights reserved.
-//
-
 import Foundation
 import XCTest
 import GameEngine
@@ -13,7 +5,7 @@ import GameEngine
 class GameTest: XCTestCase {
     
     let router = RouterSpy()
-    var game: Game<RouterSpy>!
+    var game: Game<String, String, RouterSpy>!
     
     override func setUp() {
         super.setUp()
