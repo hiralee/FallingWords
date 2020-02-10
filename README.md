@@ -2,8 +2,6 @@
 
 ## Description
 
-Dear Reviewers, thank you for taking the time to review my code.
-
 I have chosen option one of the suggested challenges, Falling Words.
 
 The app starts with asking the user 5 questions one after another. The user is shown two buttons, "Correct" and "Wrong", 
