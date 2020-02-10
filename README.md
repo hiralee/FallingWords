@@ -68,7 +68,7 @@ To enable user to start a new game once results are shown.
 
 
 
-Thank you once again for reviewing my code. Any valuable suggestions will help me become a better developer. 
+Any valuable suggestions will help me become a better developer. 
 
 
 
